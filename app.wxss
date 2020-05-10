@@ -1,0 +1,29 @@
+page{
+  background: #fdfcfc;
+}
+.img-responsive{
+  width: 100%
+}
+.padding-t-0{
+  padding-top: 0rpx!important;
+}
+.padding-10{
+  padding: 5rpx
+}
+.padding-lr30{
+    padding-left:30rpx;
+    padding-right: 30rpx
+}
+.padding-l-10{
+ padding-left:  10rpx
+}
+
+.text-justify{
+  text-align: justify
+}
+
+.hide_fr{
+  height: 220rpx;
+  overflow: hidden;
+  text-align: center;
+}

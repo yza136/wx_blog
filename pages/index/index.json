@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-button": "../../dist/button/index",
+    "i-avatar": "../../dist/avatar/index",
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index",
+    "i-icon": "../../dist/icon/index",
+    "tab-bar": "../custom-tab-bar/index"
+  }
+}

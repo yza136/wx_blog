@@ -1,0 +1,42 @@
+/* pages/user/index.wxss */
+
+
+.user_info_box{
+  padding: 30rpx 40rpx;
+  background: #fff;
+  height: 80rpx;
+  line-height: 80rpx
+}
+.user_name{
+  font-size: 36rpx
+}
+.enter{
+  text-align: left;
+}
+
+view.cell-index--i-cell-text{
+  font-size: 34rpx
+}
+.group-index--i-cell-group{
+  margin-top: 40rpx;
+}
+.flex {
+  display: inline-table;
+  flex-direction:column-reverse;
+}
+
+.login_bt{
+  font-size: 18rpx;
+  margin: 0;
+  padding: 0;
+  border: 0; 
+  outline: none;
+  background: #fff;
+  text-align: inherit;
+  line-height: inherit;
+  display: inline;
+
+}
+button::after{
+  border:none;
+}

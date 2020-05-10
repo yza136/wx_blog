@@ -1,0 +1,56 @@
+/* pages/edit/edit.wxss */
+@import "../../style/iconfont.wxss";
+#editor{
+  padding: 20rpx 30rpx;
+  height:200rpx;
+  width: auto
+}
+
+
+.hide_fr{
+  height: 230rpx;
+  position: relative;
+}
+.hide_fr image{
+  display: initial;
+  max-width: 100%;  
+  
+}
+.clearPic{
+  position: absolute;
+  right: 6rpx;
+  top:10rpx
+}
+
+.footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+}
+.txt-box{
+   display: flex;
+   height: 64rpx;
+   padding: 20rpx 20rpx;
+   justify-content: space-between
+}
+.l-box view{
+  height: 64rpx;
+  display: inline-block;
+  line-height: 61rpx; 
+}
+.r-box{
+  float: right;
+}
+.r-box button{
+   font-size: 30rpx;
+}
+
+.emoj-icon{
+  padding-left: 15rpx;
+}
+.send  button{
+  padding: 0rpx 10rpx;
+  line-height: 2
+}

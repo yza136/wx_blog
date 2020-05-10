@@ -1,0 +1,16 @@
+/* dist/emoji/index.wxss */
+.emoji_box{
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.emoji{
+  font-size: 48rpx;
+  /* padding: 20rpx 35rpx */
+  width: 16.6%;
+  padding:15rpx 0;
+  text-align: center;
+}
+.sc_height{
+  height:400rpx;
+}

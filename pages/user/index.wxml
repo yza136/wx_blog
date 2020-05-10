@@ -1,0 +1,61 @@
+<!--pages/user/user.wxml-->
+
+<view class="user_info_box">
+  <view wx:if="{{state}}">
+     <i-row>
+      <i-col span="4" i-class="col-class">
+          <i-avatar src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/322786.jpg?sign=07fb0fd94f74015921983fc1dfd36e8b&t=1584282291" size="large" shape="circle"></i-avatar>
+      </i-col>
+      <button class="login_bt" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <i-col span="18" i-class="col-class flex" >
+        <i-cell title="未登录" label="点击登录账号" i-class="padding-t-0"></i-cell>
+      </i-col>
+      <i-col span="2" i-class="col-class enter">
+          <i-icon type="enter" size="26"  color='#CDCDD7' />
+      </i-col> 
+      </button>
+    </i-row>
+  </view>
+
+  <view wx:else>
+    <i-row >
+      <i-col span="4" i-class="col-class">
+          <i-avatar src="{{avatarUrl}}" size="large" shape="circle"></i-avatar>
+      </i-col>
+      <i-col span="18" i-class="col-class" ><text class="user_name">{{nickName}}</text></i-col>
+      <i-col span="2" i-class="col-class enter">
+          <i-icon type="enter" size="26"  color='#CDCDD7' />
+      </i-col> 
+    </i-row>
+  </view>
+
+</view>
+
+<i-cell-group>
+    <i-cell title="消息中心">
+      <i-icon type="remind_fill" slot="icon" size="20"/>
+    </i-cell>
+    <i-cell title="我赞过的" value="6篇">
+      <i-icon type="praise_fill" slot="icon" size="20"/>
+    </i-cell>
+    <i-cell title="我的评论">
+      <i-icon type="addressbook_fill" slot="icon" size="20"/>
+    </i-cell>
+    <i-cell title="草稿箱">
+      <i-icon type="activity" slot="icon" size="20"/>
+    </i-cell>
+    <navigator url="/pages/edit/index">
+      <i-cell title="写文章"  >
+        <i-icon type="editor" slot="icon" size="20"/>
+      </i-cell>
+    </navigator>
+</i-cell-group>
+
+<i-cell-group>
+    <i-cell title="意见反馈">
+      <i-icon type="feedback" slot="icon" size="20"/>
+    </i-cell>
+    <i-cell title="设置">
+      <i-icon type="setup" slot="icon" size="20"/>
+    </i-cell>
+</i-cell-group>

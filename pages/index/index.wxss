@@ -1,0 +1,72 @@
+@import "../../style/iconfont.wxss";
+.i-avatar-image{
+  width: 500px
+}
+.list{
+  margin: 25rpx 40rpx 30rpx;
+  background: #fff;
+  border-radius: 12rpx
+}
+.info_box{
+  padding: 24rpx 30rpx;
+  display: flex;
+}
+.info_box>.avatar{
+  display: inline-block
+}
+.info_box>.user_fb{
+    display:  inline-block;
+    margin-left: 30rpx;
+    letter-spacing:1rpx;
+}
+.info_box>.user_fb>.username{
+   color: #6478D3;
+   font-size: 28rpx;
+   font-weight: 600;
+   margin-top: 7rpx;
+}
+.info_box>.user_fb>.fb_time{
+  font-size: 22rpx;
+  color: #8D92A3;
+   margin-top: 7rpx;
+}
+
+.fb_content{
+  padding-left: 10rpx;
+  padding-right: 10rpx
+}
+.fb_content>.fb_text{
+  padding: 15rpx  10rpx;
+}
+
+.comment_box{
+  display: flex;
+  padding: 15rpx 0;
+  justify-content:  flex-end;
+  padding-right: 10rpx;
+}
+.comment_box>view{
+   padding: 0 10rpx
+}
+.like_icon{
+  display: flex
+}
+.like_icon>text{
+  display: block;
+  font-weight: 500;
+  line-height: 28px
+}
+.footer{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+  right: 0;
+  padding: 20rpx 20rpx;
+  background: #fff;
+  z-index: 333999
+}
+.footer input{
+  border: 1px solid #f1efef;
+  padding: 10rpx 10rpx;
+  border-radius: 5rpx;
+}

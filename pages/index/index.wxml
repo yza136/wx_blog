@@ -1,0 +1,67 @@
+<view class="list_box">
+   <view class="list">
+      <view class="info_box">
+            <view class="avatar">
+              <i-avatar  src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/322786.jpg?sign=07fb0fd94f74015921983fc1dfd36e8b&t=1584282291" size="large" shape="circle"></i-avatar>
+            </view>
+            <view class="user_fb">
+              <view class="username">Meng An</view>
+               <view class="fb_time">一分钟前</view>
+            </view>
+      </view>
+      <view class="fb_content">
+          <view class="fb_text text-justify ">于是反曲弓出现了——这种弓的弓弰向前弯曲，上紧弦后弓弦与弓弰贴合，已经预存了许多弹性势能；弓弦即使拉满也至多与弓弰垂直，弓手大部分能量储存于弯曲的弓中——这样的弓就可以做得更短，比如土耳其弓。</view>
+          <i-row>
+              <i-col span="8" i-class="col-class padding-10 hide_fr">
+                  <image  class="show_pic" src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/510a5178e483feb76bb7af38628b56016bfbc4692cadc-oJYwzM_fw658.jpg?sign=3f627e1e58261b0ed13f0c0d1c85ca73&t=1584286784"></image>
+              </i-col>
+              
+              <i-col span="8"  i-class="col-class padding-10 hide_fr">
+                  <image  class="show_pic " src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/db485fa703c031ec093db9668bfd276d475ad70bd462f-cXg7YY_fw658.jpg?sign=11b6d57e73335b6a5ee6f05be35762e5&t=1584366379"></image>
+              </i-col>
+             
+              <i-col span="8" i-class="col-class padding-10 hide_fr">
+                  <image  class="show_pic" src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/fb8a59b8a0fb309d624bbed2058b965a91485520eda28-CIp0Pi_fw658.jpg?sign=83cb8630bd2a32d5e6b003f92bb4a7b1&t=1584366553"></image>
+              </i-col>
+              
+              <i-col span="8" i-class="col-class padding-10 hide_fr">
+                  <image class="show_pic" src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/fdbaab0c341ecfe7d7eb78a62d8dd9359fa893513dc20b-13HrMj_fw658.jpg?sign=a4c1e228d31578df2dd275067201a764&t=1584366573"></image>
+              </i-col>
+          </i-row>
+      </view>
+      <view class="comment_box">
+        <view class="like_icon">
+            <i-icon type="praise_fill" size="26"  color='#CDCDD7'/><text class="padding-l-10">24</text>
+        </view>
+         <view class="messaget_icon">
+            <i-icon type="message_fill"  size="26"  color='#CDCDD7'  bindtap="elastic"/>
+        </view>
+      </view>
+   </view>
+
+   <view class="list">
+      <view class="info_box">
+            <view class="avatar">
+              <i-avatar  src="https://792d-y-35de5c-1255972828.tcb.qcloud.la/322786.jpg?sign=07fb0fd94f74015921983fc1dfd36e8b&t=1584282291" size="large" shape="circle"></i-avatar>
+            </view>
+            <view class="user_fb">
+              <view class="username">Meng An</view>
+               <view class="fb_time">一分钟前</view>
+            </view>
+      </view>
+      <view class="fb_content">
+          <view class="fb_text text-justify ">于是反曲弓出现了——这种弓的弓弰向前弯曲，上紧弦后弓弦与弓弰贴合，已经预存了许多弹性势能；弓弦即使拉满也至多与弓弰垂直，弓手大部分能量储存于弯曲的弓中——这样的弓就可以做得更短，比如土耳其弓。</view>
+      </view>
+      <view class="comment_box">
+        <view class="like_icon">
+            <i-icon type="praise_fill" size="26"  color='#CDCDD7'/><text class="padding-l-10">24</text>
+        </view>
+         <view class="messaget_icon">
+            <i-icon type="message_fill"  size="26"  color='#CDCDD7' bindtap="elastic"/>
+        </view>
+      </view>
+   </view>
+</view>
+<view class="footer" style="bottom:{{Entryheight}}px" adjust-position="false" wx:if="{{isShow}}" >
+    <input placeholder="喜欢就评论Ta" bindfocus="Entryfocus" adjust-position="{{false}}"  focus="{{isShow}}"  bindblur="Losefocus"/>
+</view>

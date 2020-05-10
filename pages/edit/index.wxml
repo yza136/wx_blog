@@ -1,0 +1,31 @@
+<textarea  placeholder="开始编辑..." id="editor" focus="true" bindfocus="Entryfocus" bindblur="Losefocus" bindinput="Content" show-confirm-bar="{{false}}" value="{{content}}"></textarea>
+
+<i-row i-class="padding-10 padding-lr30">
+      <block wx:for="{{tempFilePaths}}" wx:key="item">
+        <i-col span="8" i-class="col-class padding-10 hide_fr">
+          <image src="{{item}}" data-key="{{index}}" mode="aspectFill" bindtap="previewImage"></image>
+          <!-- <i-icon class="clearPic" type="close" size="28" color="#000" /> -->
+        </i-col>
+        
+      </block>
+</i-row>
+
+<view class="footer" style="bottom:{{Entryheight}}px">
+    <view class="txt-box">
+
+      <view class="l-box">
+          <view class="pic-icon"><i-icon type="picture"  size="26"  bindtap="UpdaloadPic"/></view>
+          <view class="emoj-icon" bindtap="emojimodel"><i-icon type="emoji" size="26" /></view>
+          <!-- <icon class="iconfont icon-jianpan" ></icon> -->
+      </view>
+
+      <view class="r-box">
+          <view class="send">
+              <button bindtap="send" >发送</button>
+          </view>
+      </view>
+    
+    </view>
+    
+    <i-emoji id="emojis"  bindseledEom="seledEom"/>
+</view>

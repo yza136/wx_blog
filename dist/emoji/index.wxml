@@ -1,0 +1,10 @@
+<!--dist/emoji/index.wxml-->
+<scroll-view class="sc_height" scroll-y="true" wx:if="{{isShow}}">
+  <view class="emoji_box">
+    <block wx:for="{{emojis}}" wx:key="item">
+        <view class="emoji"  bindtap="ClickEmoji" data-key="{{index}}">
+          {{item}}
+        </view>
+    </block>
+  </view>
+</scroll-view>
