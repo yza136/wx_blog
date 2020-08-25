@@ -1,7 +1,8 @@
 App({
   data:{
     content:"",
-    tempFilePaths:""
+    tempFilePaths:"",
+    url: "http://127.0.0.1:3000"
   },
   onLaunch: function(e) {
    

@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/edit/index",
-    "pages/user/index"
+    "pages/user/index",
+    "pages/praise/index"
   ],
   "tabBar": {
     "color": "#7A7E83",
@@ -23,7 +24,6 @@
         "text": "我的",
         "selectedIconPath": "image/user2.png"
       }
-     
     ]
   },
   "usingComponents": {

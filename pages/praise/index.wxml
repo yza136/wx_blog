@@ -1,6 +1,7 @@
-<wxs src="../../time.wxs" module="filter" />
+<!--pages/praise/index.wxml-->
 <view class="list_box" >
-  <block wx:for="{{datas}}" wx:key="item">
+
+  <!-- <block wx:for="{{datas}}" wx:key="item"> -->
     <view class="list">
       <view class="info_box">
         <view class="avatar">
@@ -8,17 +9,17 @@
         </view>
         <view class="user_fb">
           <view class="username">{{item.user[0].nickName}}</view>
-          <view class="fb_time">  {{filter.format(item._id, 'YY-MM-DD')}}</view>
+          <view class="fb_time">一分钟前</view>
         </view>
       </view>
       <view class="fb_content">
         <view class="fb_text text-justify "> {{item.content}}</view>
         <i-row>
-          <block wx:for="{{item.imgUrls}}" wx:key="item">
+          <!-- <block wx:for="{{item.imgUrls}}" wx:key="item"> -->
             <i-col span="8" i-class="col-class padding-10 hide_fr">
               <image class="show_pic" src="{{url}}/images/{{item}}" mode="aspectFill"></image>
             </i-col>
-          </block>
+          <!-- </block> -->
         </i-row>
       </view>
       <view class="comment_box">
@@ -32,22 +33,5 @@
         </view>
       </view>
     </view>
-  </block>
+  <!-- </block> -->
 </view>
-<i-spin custom  wx:if='{{loading}}'>
-  <view class="loading"></view>
-  <span>加载中...</span>
-</i-spin>
-<i-spin custom  wx:else>
-  <i-spin custom>触碰到我底线啦！</i-spin>
-</i-spin>
-
-
-<view class="footer" style="bottom:{{Entryheight}}px" adjust-position="false" wx:if="{{isShow}}">
-  <view class="pl_block">
-    <input placeholder="喜欢就评论Ta" confirm-type="send"	 bindfocus="Entryfocus" adjust-position="{{false}}" focus="{{isShow}}" bindblur="Losefocus" bindconfirm="confirm"  data-vid="{{vid}}" />
-    <view class="emoji_block" bindtap="emojimodel"><i-icon type="emoji_fill" size="28" color="#80848f" /></view>
-  </view>
-  <i-emoji id="emojis"  bindseledEom="seledEom"/>
-</view>
-<view class="msg" wx:if="{{isShow}}" bindtap="HidePl"></view>

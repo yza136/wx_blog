@@ -19,5 +19,8 @@ Component({
             type: Boolean,
             value: false
         }
+    },
+    options: {
+      styleIsolation: 'apply-shared'
     }
 });

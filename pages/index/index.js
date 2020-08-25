@@ -1,3 +1,4 @@
+var app = getApp();
 Page({
 
   /**
@@ -5,7 +6,12 @@ Page({
    */
   data: {
     Entryheight:"",
-    iShow:false,
+    isShow:false,
+    datas:"",
+    touch:0,
+    loading:"",
+    vid:"",
+    url: app.data.url,
   },
 
   Entryfocus(e) {
@@ -20,11 +26,77 @@ Page({
     })
     console.log(e)
     
-    // this.emojis.emojihide()
+    this.emojis.emojihide()
   },//聚焦时 调整发送栏的高度为0  
+  //
+  confirm(e){
+    this.HidePl(0)
+  },
 
-  Losefocus(e) {
-   let _that = this;
+
+  /**
+   * 点击发消息
+  */
+  elastic(e){
+    let vid = e.currentTarget.dataset.vid;
+    this.setData({
+      isShow: !this.data.isShow,
+      vid: vid
+    });
+    this.emojis = this.selectComponent("#emojis");
+  },
+
+  // 点击emojis  显示表情图库
+  emojimodel(e) {
+    this.emojis.emojimodel();
+    this.setData({
+        Entryheight: 0, 
+      })
+  },
+  // 点击赞
+  praise(e){
+     let index = e.currentTarget.dataset.index,  //内容数组的下坐标
+        article_id= e.currentTarget.dataset.vid, //内容的id
+        openid = wx.getStorageSync('openid'),  //用户的openid
+        _id=null,
+        praise = this.data.datas[index].praise;  //点赞的praise数组
+
+    if (praise.length==0){
+      let status = { status: 'true'};
+      this.data.datas[index].praise.push(status);
+      ++this.data.datas[index].nub
+    }else{
+      this.data.datas[index].praise[0].status = !this.data.datas[index].praise[0].status;
+      _id = e.currentTarget.dataset._id;
+      let NubModify = this.data.datas[index].praise[0].status ? ++this.data.datas[index].nub : --this.data.datas[index].nub;
+      console.log(this.data.datas)
+    }
+
+    this.setData({
+     datas: this.data.datas
+   })
+
+    wx.request({
+      url: app.data.url + '/praise',
+      method:"POST",
+      data:{
+        openid: openid,
+        uid: article_id,
+        status: this.data.datas[index].praise[0].status,
+        _id: _id,
+        nub: this.data.datas[index].nub
+      },
+      success(res){
+        console.log(res)
+      }
+    })
+
+    console.log(e)
+  },
+
+  //隐藏输入框
+  HidePl(e){
+    var _that = this;
     wx.showTabBar({
      success(){
        _that.setData({
@@ -34,28 +106,52 @@ Page({
      }
    })
   },
-
-  elastic(){
-    console.log(222)
-    this.setData({
-      isShow: !this.data.isShow
-    })
-  },
-
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-       wx.request({
-         url: 'http://127.0.0.1:3000/ll',
-         method:"POST",
+    let _that=this
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+    })
+    wx.checkSession({
+      success(res){
+        let openid = wx.getStorageSync("openid")
+          wx.request({
+          url: app.data.url + '/show',
+          method:"POST",
+          data:{
+                openid:openid
+           },
+           success(res){
+             _that.setData({
+               datas: res.data.docs
+             })
+             console.log(res)
+           }
+         })
+        console.log(openid)
+       
+        wx.hideLoading()
+      },
+      fail(err){
+        wx.request({
+          url: app.data.url + '/show',
+          method: "POST",
+          success(res) {
+            _that.setData({
+              datas: res.data.docs
+            })
+            console.log(res)
+            wx.hideLoading()
+          }
+        })
+      }
+    })
    
-         success(e){
-            console.log(e)
-         }
-       })
+   
+       
   },
 
   /**
@@ -101,7 +197,37 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    let _that = this,
+      touch = _that.data.touch,
+      loading = _that.data.loading,
+      datas = _that.data.datas,
+      openid = wx.getStorageSync("openid");
+      ++touch;
+    if (loading || touch==1){
+      _that.setData({
+        loading: true
+      })
+      wx.request({
+        url: app.data.url+'/show',
+        method: "post",
+        data: {
+          pages: touch,
+          openid: openid
+        },
+        success: function (res) {
+          datas.push(...res.data.docs)
+          let isArr = res.data.length,
+              ishow = true,
+              PageNub = res.data.PageNub;
+          console.log(datas)
+          _that.setData({
+            datas: datas,
+            touch: touch,
+            loading: (PageNub == touch) ? false: true
+          })
+        },
+      })
+   }
   },
 
   /**
@@ -109,5 +235,8 @@ Page({
    */
   onShareAppMessage: function () {
     
-  }
+  },
+   onPageScroll: function () {
+     this.HidePl()
+  },
 })

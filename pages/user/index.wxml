@@ -32,12 +32,16 @@
 </view>
 
 <i-cell-group>
-    <i-cell title="消息中心">
-      <i-icon type="remind_fill" slot="icon" size="20"/>
-    </i-cell>
-    <i-cell title="我赞过的" value="6篇">
-      <i-icon type="praise_fill" slot="icon" size="20"/>
-    </i-cell>
+    <navigator url="/logs/log/log">
+      <i-cell title="消息中心">
+        <i-icon type="remind_fill" slot="icon" size="20"/>
+      </i-cell>
+    </navigator>
+    <navigator url="/pages/praise/index">
+      <i-cell title="我赞过的" value="6篇">
+        <i-icon type="praise_fill" slot="icon" size="20"/>
+      </i-cell>
+    </navigator>
     <i-cell title="我的评论">
       <i-icon type="addressbook_fill" slot="icon" size="20"/>
     </i-cell>

@@ -1,4 +1,5 @@
 // pages/user/index.js
+var app = getApp();
 Page({
 
   /**
@@ -18,7 +19,7 @@ Page({
       success(res){
         let code = res.code
         wx.request({
-          url: 'http://127.0.0.1:3000/login',
+          url: app.data.url+'/login',
           data: {
             code: code,
             rawData: rawData,

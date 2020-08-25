@@ -47,7 +47,7 @@ Page({
             filePath = _that.data.tempFilePaths,  //上传的图片路径（数组）
             flieLenght = _that.data.tempFilePaths.length  //上传图片Url（数组）的数量
         _that.uploadimg({
-          url: 'http://127.0.0.1:3000/AcceptText', 
+          url: app.data.url+'/AcceptText', 
           path: filePath,
           content: content,
           openid: openid,

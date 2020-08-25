@@ -17,7 +17,9 @@ page{
 .padding-l-10{
  padding-left:  10rpx
 }
-
+.show_pic{
+  width: 100%
+}
 .text-justify{
   text-align: justify
 }
